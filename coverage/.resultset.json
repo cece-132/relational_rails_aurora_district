@@ -242,6 +242,11 @@
         "lines": [
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -271,8 +276,29 @@
           1,
           null
         ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/relational_rails/aurora_district/app/controllers/teachers_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/relational_rails/aurora_district/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1657580220
+    "timestamp": 1657657293
   }
 }
