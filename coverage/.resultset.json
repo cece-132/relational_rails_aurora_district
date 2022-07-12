@@ -244,6 +244,7 @@
           null,
           null,
           1,
+          1,
           null
         ]
       },
@@ -267,25 +268,26 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/relational_rails/aurora_district/spec/models/teacher_spec.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/relational_rails/aurora_district/app/controllers/daycares_controller.rb": {
         "lines": [
           1,
+          1,
+          0,
+          null,
           null,
           1,
-          1,
-          2,
+          4,
           null,
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/relational_rails/aurora_district/app/models/teacher.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/relational_rails/aurora_district/app/controllers/application_controller.rb": {
         "lines": [
-          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1657637248
+    "timestamp": 1657644556
   }
 }
