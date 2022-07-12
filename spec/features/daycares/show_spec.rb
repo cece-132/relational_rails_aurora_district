@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Daycare do
-    describe 'can show the attributes of the daycare' do
+    describe 'daycares#show' do
         it 'can show the daycare name' do
             daycare_1 = Daycare.create!(name: "Aurora's Promise", total_teachers: 15, total_students: 225, enrollment_full: false)
 
@@ -33,6 +33,6 @@ RSpec.describe Daycare do
 
             expect(page).to have_content("The enrollment is currently still accepting students")
         end
-
     end
 end
+

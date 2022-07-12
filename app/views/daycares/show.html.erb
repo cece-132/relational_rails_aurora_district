@@ -1,12 +1,12 @@
-<h2>Learn more about the <%= @daycare.name %> Daycare </h3>
+<h2><%= @daycare.name %> Daycare Stats</h3>
 
 <p><h3> <%= @daycare.name%> </h3></p> 
-<p><h6> <%= @daycare.total_teachers%> <% link_to Teachers, "/daycares/#{@daycare.id}/teachers"%> </h6></p>
-<p><h6> A maximum capacity of <%= @daycare.total_students%> </h6></p>
-<p><h6> <% if @daycare.enrollment_full == false %>
-           <p><h6> <%= "The enrollment is currently still accepting students" %> </h6></p>
+<p><h4> <%= @daycare.total_teachers%> </h4></p>
+<p><h4> A maximum capacity of <%= @daycare.total_students%> </h4></p>
+<p><h4> <% if @daycare.enrollment_full == false %>
+           <p><h4> <%= "The enrollment is currently still accepting students" %> </h6></p>
         <% else %>
-           <p><h6> <%= "The enrollment is currently full and is not accepting new students at this time" %> </h6></p>
+           <p><h4> <%= "The enrollment is currently full and is not accepting new students at this time" %> </h4></p>
         <% end %>
 
 

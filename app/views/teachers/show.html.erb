@@ -1,0 +1,10 @@
+<p> Teacher: <%= @teacher.name %> 
+<p> Daycare code: <%= @teacher.daycare_id%> </p>
+<p> Total Students: <%= @teacher.max_students %> </p>
+<% if @teacher.enrollment_full == false %>
+<p> <%=  "This teacher still has room for more students" %> </p>
+<% else %>
+<p> <%= "This teacher does NOT have the capcity for more students"%> </p>
+<% end %>
+
+

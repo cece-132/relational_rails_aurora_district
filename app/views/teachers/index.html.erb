@@ -1,0 +1,5 @@
+<h3>Meet the teachers of the Aurora District</h3>
+
+    <% @teachers.each do |teacher| %>
+<h4> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> </h4>
+    <% end %>
