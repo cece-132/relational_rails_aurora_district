@@ -1,0 +1,14 @@
+<%= form_with url: "/teachers/#{@teacher.id}", method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :student_count %>
+    <%= form.text_field :student_count %>
+    <%= form.label :max_students %>
+    <%= form.text_field :max_students %>
+    <%= form.label :enrollment_full %>
+    <%= form.text_field :enrollment_full %>
+    <%= form.label :daycare_id %>
+    <%= form.text_field :daycare_id %>
+
+    <%= form.submit 'Update Teacher' %>
+<% end %>

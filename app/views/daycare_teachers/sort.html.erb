@@ -14,12 +14,13 @@ div.c {
 <p><h3> Teachers of <%=@daycare.name%> Daycare</h3></p>
 <p></p>
 <p></p>
-<p> <%= link_to "Sort alphabetically", "/daycares/#{@daycare.id}/teachers/sort" %> </p>
-<p></p>
-<p></p>
-<p></p>
-<% @teachers.each do |teacher| %>
-<p> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> - <%= link_to "Edit", "/teachers/#{teacher.id}/edit" %> </p>
+
+<%sorted = @teachers.sort_by do |teacher| %>
+<% teacher.name %>
+<% end %>
+
+<% sorted.each do |teacher|%>
+<p><%= link_to teacher.name, "/teachers/#{teacher.id}" %></p>
 <% end %>
 
 <%= button_to "Create Teacher", "/daycares/#{@daycare.id}/teachers/new"%>
