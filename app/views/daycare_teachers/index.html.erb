@@ -11,8 +11,8 @@ div.c {
 
 <div class="c"> <%= button_to "Teachers Homepage", "/teachers"%> <%= button_to "Daycares Homepage", "/daycares" %> </div>
 
-<h3>Meet the teachers of the Aurora District</h3>
+<p><h3> Teachers of <%=@daycare.name%> Daycare</h3></p>
 
-    <% @teachers.each do |teacher| %>
-<h4> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> </h4>
-    <% end %>
+<% @teachers.each do |teacher| %>
+<p> <%= link_to teacher.name, "/teachers/#{teacher.id}" %></p>
+<% end %>

@@ -10,9 +10,6 @@ RSpec.describe Teacher do
             visit "/teachers"
             expect(page).to have_content(teacher_1.name)
         end
-        #Below if for the show_spec
-        # it 'displays the max number of students per class'
-        # it 'display enrollment status'
-        # it 'displays which school the student belongs to'
+
     end
 end

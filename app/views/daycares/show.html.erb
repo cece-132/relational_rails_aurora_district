@@ -1,12 +1,27 @@
+<html>
+<head>
+<style>
+div.c {
+  text-align: right;
+} 
+
+</style>
+</head>
+<body>
+
+<div class="c"> <%= button_to "Teachers Homepage", "/teachers"%> <%= button_to "Daycares Homepage", "/daycares" %> </div>
+
 <h2><%= @daycare.name %> Daycare Stats</h3>
 
 <p><h3> <%= @daycare.name%> </h3></p> 
-<p><h4> <%= @daycare.total_teachers%> </h4></p>
+<p><h4> Total <%= link_to "Teachers on Campus:", "/daycares/#{@daycare.id}/teachers" %> <%= @daycare.teachers.count%> </h4></p>
 <p><h4> A maximum capacity of <%= @daycare.total_students%> </h4></p>
 <p><h4> <% if @daycare.enrollment_full == false %>
            <p><h4> <%= "The enrollment is currently still accepting students" %> </h6></p>
         <% else %>
            <p><h4> <%= "The enrollment is currently full and is not accepting new students at this time" %> </h4></p>
         <% end %>
+
+<p><h4><%= @daycare.name%> has <%= @daycare.teachers.count %> Teachers on Staff </h4></p>
 
 

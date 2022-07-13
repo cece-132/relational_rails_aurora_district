@@ -49,5 +49,7 @@ RSpec.describe Teacher do
 
             expect(page).to have_content(teacher_1.daycare_id)
         end
+
+        
     end
 end
