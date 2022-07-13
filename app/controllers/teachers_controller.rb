@@ -17,6 +17,12 @@ class TeachersController < ApplicationController
         redirect_to "/teachers"
     end
 
+    def destroy
+        teacher = Teacher.find(params[:id])
+        teacher.destroy
+        redirect_to "/teachers" 
+    end
+
     def teacher_params
         params.permit(  :name,
                         :student_count,

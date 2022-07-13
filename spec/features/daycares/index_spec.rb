@@ -44,5 +44,18 @@ RSpec.describe Daycare do
             expect(current_path).to eq("/daycares/1/edit")
         end
 
+        it 'displays a delete link for every daycare' do
+            daycare_1 = Daycare.create!(name: "Aurora's Promise", total_teachers: 15, total_students: 225, enrollment_full: false)
+
+            visit "/daycares"
+
+            expect(page).to have_content("Aurora's Promise")
+
+            click_link "Delete"
+
+            expect(current_path).to eq("/daycares")
+            expect(page).to_not have_content("Aurora's Promise")
+        end
+
     end
 end

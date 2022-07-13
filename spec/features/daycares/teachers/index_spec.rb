@@ -70,5 +70,47 @@ RSpec.describe DaycareTeachersController do
             click_on "Edit"
             expect(current_path).to eq("/teachers/#{teacher_2.id}/edit")
         end
+
+        it 'can destroy teachers from teachers#index' do
+            daycare_1 = Daycare.create!(name: "Aurora's Promise", total_teachers: 15, total_students: 225, enrollment_full: false)
+            teacher_1 = daycare_1.teachers.create!(name: "Ms. Johnson", student_count: 15, max_students: 15, enrollment_full: true)
+            teacher_2 = daycare_1.teachers.create!(name: "Mr. Anderson", student_count: 15, max_students: 15, enrollment_full: true)
+
+            visit "/teachers/#{teacher_1.id}"
+
+            click_link "Delete Teacher"
+
+            expect(current_path).to eq("/teachers")
+            expect(page).to_not have_content("Ms.Johnson") 
+        end
+
+        it 'can destroy teachers from daycare_teachers#index' do
+            daycare_1 = Daycare.create!(name: "Aurora's Promise", total_teachers: 15, total_students: 225, enrollment_full: false)
+            teacher_1 = daycare_1.teachers.create!(name: "Ms. Johnson", student_count: 15, max_students: 15, enrollment_full: true)
+            
+            visit "/daycares/#{daycare_1.id}/teachers"
+
+            expect(page).to have_content("Ms. Johnson") 
+
+            click_link "Delete"
+
+            expect(current_path).to eq("/daycares/#{daycare_1.id}/teachers")
+            expect(page).to_not have_content("Ms. Johnson") 
+        end
+
+        it 'can display teachers with x students' do
+            daycare_1 = Daycare.create!(name: "Aurora's Promise", total_teachers: 15, total_students: 225, enrollment_full: false)
+            teacher_1 = daycare_1.teachers.create!(name: "Ms. Johnson", student_count: 8, max_students: 15, enrollment_full: true)
+            teacher_2 = daycare_1.teachers.create!(name: "Mr. Anderson", student_count: 5, max_students: 15, enrollment_full: true)
+
+            visit "/daycares/#{daycare_1.id}/teachers"
+
+            fill_in 'student_count', with: 7
+            click_button "Submit"
+
+            expect(page).to have_button('Submit')
+            expect(page).to have_content('Ms. Johnson')
+            expect(page).to_not have_content('Mr. Anderson')
+        end
     end
 end

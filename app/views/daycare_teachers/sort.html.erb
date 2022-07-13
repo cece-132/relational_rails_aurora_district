@@ -20,7 +20,8 @@ div.c {
 <% end %>
 
 <% sorted.each do |teacher|%>
-<p><%= link_to teacher.name, "/teachers/#{teacher.id}" %></p>
+<p> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> - <%= link_to "Edit", "/teachers/#{teacher.id}/edit" %> |
+<%=link_to "Delete", "/daycares/#{teacher.id}/teachers", method: :delete %> </p>
 <% end %>
 
 <%= button_to "Create Teacher", "/daycares/#{@daycare.id}/teachers/new"%>

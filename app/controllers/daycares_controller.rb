@@ -25,6 +25,12 @@ class DaycaresController < ApplicationController
         redirect_to "/daycares/#{daycare.id}"
     end
 
+    def destroy
+        daycare = Daycare.find(params[:id])
+        daycare.destroy
+        redirect_to "/daycares"   
+    end
+
     def daycare_params
         params.permit(  :name,
                         :total_students,

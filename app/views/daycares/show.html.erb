@@ -25,6 +25,7 @@ div.c {
 
 <p><h4><%= @daycare.name%> has <%= @daycare.teachers.count %> Teachers on Staff </h4></p>
 
- <h6><%= link_to "Update Daycare", "/daycares/#{@daycare.id}/edit" %></h6>
+ <p><h6><%= link_to "Update Daycare", "/daycares/#{@daycare.id}/edit" %></h6></p>
+ <p><h6> <%= link_to "Delete Daycare", "/daycares/#{@daycare.id}", method: :delete %> </h6></p>
 
 

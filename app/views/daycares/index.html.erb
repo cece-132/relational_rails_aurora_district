@@ -17,7 +17,8 @@ div.c {
 <% end %>
 
 <% ascend.each do |daycare| %>
-<h3><p><%= link_to daycare.name, "/daycares/#{daycare.id}/teachers" %> - <%=link_to "Edit", "/daycares/#{daycare.id}/edit" %></p></h3>
+<h3><p><%= link_to daycare.name, "/daycares/#{daycare.id}/teachers" %> - <%=link_to "Edit", "/daycares/#{daycare.id}/edit" %> | 
+<%=link_to "Delete", "/daycares/#{daycare.id}", method: :delete %></p></h3>
 <% end %>
 
 <p> <%= link_to "New Daycare", "/daycares/new" %> </p>
