@@ -11,9 +11,10 @@ div.c {
 
 <div class="c"> <%= button_to "Teachers Homepage", "/teachers"%> <%= button_to "Daycares Homepage", "/daycares" %> </div>
 
-<h2><%= @daycare.name %> Daycare Stats</h3>
+<p><h3><%= @daycare.name %> Daycare Stats </h3></p>
 
-<p><h3> <%= @daycare.name%> </h3></p> 
+<p><h3> <%= @daycare.name%></h3></p> 
+
 <p><h4> Total <%= link_to "Teachers on Campus:", "/daycares/#{@daycare.id}/teachers" %> <%= @daycare.teachers.count%> </h4></p>
 <p><h4> A maximum capacity of <%= @daycare.total_students%> </h4></p>
 <p><h4> <% if @daycare.enrollment_full == false %>
@@ -23,5 +24,8 @@ div.c {
         <% end %>
 
 <p><h4><%= @daycare.name%> has <%= @daycare.teachers.count %> Teachers on Staff </h4></p>
+
+ <p><h6><%= link_to "Update Daycare", "/daycares/#{@daycare.id}/edit" %></h6></p>
+ <p><h6> <%= link_to "Delete Daycare", "/daycares/#{@daycare.id}", method: :delete %> </h6></p>
 
 

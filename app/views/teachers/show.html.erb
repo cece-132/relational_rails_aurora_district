@@ -22,4 +22,8 @@ div.c {
 <p> <%= "This teacher does NOT have the capcity for more students"%> </p>
 <% end %>
 
+<p> <%= button_to 'Update Teacher', "/teachers/#{@teacher.id}/edit" %> </p>
+<p><h6> <%= link_to "Delete Teacher", "/teachers/#{@teacher.id}", method: :delete %> </h6></p>
+
+
 

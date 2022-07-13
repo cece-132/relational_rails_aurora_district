@@ -1,0 +1,12 @@
+<%= form_with url: "/daycares/#{@daycare.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :total_teachers %>
+    <%= form.text_field :total_teachers %>
+    <%= form.label :total_students %>
+    <%= form.text_field :total_students %>
+    <%= form.label :enrollment_full %>
+    <%= form.text_field :enrollment_full %>
+
+    <%= form.submit 'Submit' %>
+<% end %>

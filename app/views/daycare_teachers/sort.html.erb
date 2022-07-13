@@ -14,19 +14,12 @@ div.c {
 <p><h3> Teachers of <%=@daycare.name%> Daycare</h3></p>
 <p></p>
 <p></p>
-<p> <%= link_to "Sort alphabetically", "/daycares/#{@daycare.id}/teachers/sort" %> |
 
-<%= form_with url: "/daycares/#{@daycare.id}/teachers", method: :get, local: true do |form|%>
-  <%= form.label :student_count, "Teacher with students over #" %>
-  <%= form.text_field :student_count %>
+<%sorted = @teachers.sort_by do |teacher| %>
+<% teacher.name %>
+<% end %>
 
-<%= form.submit 'Submit' %>
-
-<% end %></p>
-<p></p>
-<p></p>
-<p></p>
-<% @teachers.each do |teacher| %>
+<% sorted.each do |teacher|%>
 <p> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> - <%= link_to "Edit", "/teachers/#{teacher.id}/edit" %> |
 <%=link_to "Delete", "/daycares/#{teacher.id}/teachers", method: :delete %> </p>
 <% end %>

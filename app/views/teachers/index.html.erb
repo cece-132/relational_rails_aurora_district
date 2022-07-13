@@ -14,5 +14,7 @@ div.c {
 <h3>Meet the teachers of the Aurora District</h3>
 
     <% @teachers.each do |teacher| %>
-<h4> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> </h4>
+    <% if teacher.enrollment_full == true%>
+  <h4> <%= link_to teacher.name, "/teachers/#{teacher.id}" %> - <%= link_to "Edit", "/teachers/#{teacher.id}/edit" %> </h4>
+    <% end %>
     <% end %>
