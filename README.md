@@ -5,7 +5,8 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 
+    - rails 5.2.8
 
 * System dependencies
 
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+![[Pasted image 20220711122222.png]]
+
