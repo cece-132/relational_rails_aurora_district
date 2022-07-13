@@ -15,7 +15,7 @@ RSpec.describe Daycare do
 
             visit "/daycares/#{daycare_1.id}"
 
-            expect(page).to have_content(daycare_1.total_teachers)
+            expect(page).to have_content(daycare_1.teachers.count)
         end
 
         it 'can show the total students in the school' do

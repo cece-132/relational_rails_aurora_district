@@ -1,4 +1,19 @@
-<p> Teacher: <%= @teacher.name %> 
+<html>
+<head>
+<style>
+
+div.c {
+  text-align: right;
+} 
+
+</style>
+</head>
+<body>
+
+<div class="c"> <%= button_to "Teachers Homepage", "/teachers"%> <%= button_to "Daycares Homepage", "/daycares" %> </div>
+
+<p> Teacher: <%= @teacher.name %> </p>
+
 <p> Daycare code: <%= @teacher.daycare_id%> </p>
 <p> Total Students: <%= @teacher.max_students %> </p>
 <% if @teacher.enrollment_full == false %>

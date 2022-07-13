@@ -1,3 +1,16 @@
+<html>
+<head>
+<style>
+div.c {
+  text-align: right;
+} 
+
+</style>
+</head>
+<body>
+
+<div class="c"> <%= button_to "Teachers Homepage", "/teachers"%> <%= button_to "Daycares Homepage", "/daycares" %> </div>
+
 <h1>Aurora Daycares</h1>
 <%ascend = @daycares.sort_by do |daycare| %>
 <p><% daycare.created_at %></p>
@@ -6,4 +19,6 @@
 <% ascend.each do |daycare| %>
 <h3><p><%= link_to daycare.name, "/daycares/#{daycare.id}/teachers" %></p></h3>
 <% end %>
+
+<p> <%= link_to "New Daycare", "/daycares/new" %> </p>
 
