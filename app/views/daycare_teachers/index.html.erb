@@ -1,0 +1,5 @@
+<p><h3> Teachers of <%=@daycare.name%> Daycare</h3></p>
+
+<% @teachers.each do |teacher| %>
+<p> <%= link_to teacher.name, "/teachers/#{teacher.id}" %></p>
+<% end %>

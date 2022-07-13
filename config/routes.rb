@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get '/daycares', to: 'daycares#index'
   get '/daycares/:id', to: 'daycares#show'
+
   get '/teachers', to: 'teachers#index'
   get '/teachers/:id', to: 'teachers#show'
+
+  get '/daycares/:id/teachers', to: 'daycare_teachers#index'
 end
